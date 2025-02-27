@@ -2,8 +2,8 @@
     --primary-color: #ff6b6b;
     --secondary-color: #4ecdc4;
     --background-color: #f7f7f7;
-    --third-color: #0559ad;
-    --fourth-color: #ff54e8;
+    --third-color: #4CAF50;
+    --fourth-color: #E91E63;
     --text-color: #333;
 }
 
@@ -189,12 +189,12 @@ body {
 }
 
 .donate {
-    background: var(--third-color);
+    background: #4CAF50;
     color: white;
 }
 
 .wishlist {
-    background: var(--fourth-color);
+    background: #E91E63;
     color: white;
 }
 
