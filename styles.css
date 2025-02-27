@@ -2,6 +2,8 @@
     --primary-color: #ff6b6b;
     --secondary-color: #4ecdc4;
     --background-color: #f7f7f7;
+    --third-color: #0559ad;
+    --fourth-color: #ff54e8;
     --text-color: #333;
 }
 
@@ -183,6 +185,16 @@ body {
 
 .subscribe {
     background: var(--secondary-color);
+    color: white;
+}
+
+.donate {
+    background: var(--third-color);
+    color: white;
+}
+
+.wishlist {
+    background: var(--fourth-color);
     color: white;
 }
 
