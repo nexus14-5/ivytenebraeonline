@@ -1,0 +1,257 @@
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --background-color: #f7f7f7;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* Replace the existing background with this gradient */
+    background: linear-gradient(
+        135deg,
+        #1a1c2c,
+        #4b1248,
+        #3498db,
+        #2c3e50
+    );
+    /* Or alternatively, this more colorful gradient */
+    /*
+    background: linear-gradient(
+        45deg,
+        #ff416c,
+        #ff4b2b,
+        #6f86d6,
+        #48c6ef
+    );
+    */
+    background-size: 300% 100%;
+    animation: gradientBG 10s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.profile {
+    text-align: left;
+    margin-bottom: 40px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    margin-bottom: 0;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.profile-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    min-height: 150px;
+    align-items: flex-start;
+}
+
+.profile h1 {
+    color: var(--text-color);
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.profile h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        var(--primary-color), 
+        var(--secondary-color)
+    );
+    border-radius: 2px;
+    transform: scaleX(0.8);
+    transition: transform 0.3s ease;
+}
+
+.profile h1:hover::after {
+    transform: scaleX(1);
+}
+
+.bio {
+    color: #f0f0f0;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    max-width: 90%;
+    align-self: center;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-button {
+    position: relative;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.link-button i {
+    margin-right: 10px;
+}
+
+.link-button:hover {
+    transform: translateY(-3px);
+}
+
+.hover-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.link-button:hover .hover-effect {
+    left: 100%;
+}
+
+.shop {
+    background: var(--primary-color);
+    color: white;
+}
+
+.subscribe {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.social {
+    background: #833AB4;
+    color: white;
+}
+
+.contact {
+    background: #38A1F3;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .profile-pic {
+        margin-bottom: 15px;
+    }
+
+    .profile-info {
+        min-height: auto;
+        align-items: center;
+    }
+
+    .profile h1 {
+        text-align: center;
+    }
+
+    .bio {
+        max-width: 100%;
+    }
+}
+
+/* Add these new keyframes at the end of your CSS file */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Add this new class */
+.shop:first-of-type {
+    animation: bounce 2s infinite ease-in-out;
+}
+
+/* Modify the existing hover effect for the first shop button */
+.shop:first-of-type:hover {
+    animation: none;
+    transform: translateY(-3px);
+}
+
+/* Add this new animation */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} 
