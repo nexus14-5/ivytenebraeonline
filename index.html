@@ -3,77 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Links</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Ivy Tenebrae - Creator</title>
+    <link rel="stylesheet" href="landing-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600;700&family=Bebas+Neue&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="profile">
-            <img src="/images/picture.jpg" alt="Profile Picture" class="profile-pic">
-            <div class="profile-info">
-                <h1>Ivy Tenebrae</h1>
-                <p class="bio">Pocket rocket cosplay potato </br>and certified omnishambles</p>
+    <div class="hero-section">
+        <div class="hero-image">
+            <img src="/images/picture.jpg" alt="Ivy Tenebrae" class="profile-hero">
+        </div>
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="creator-title">Ivy Tenebrae</h1>
+                <p class="creator-subtitle">I make content!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="cta-section">
+            <button class="main-cta-button" onclick="window.location.href='https://beacons.ai/ivytenebrae'">
+                <i class="fas fa-heart"></i>
+                Explore My World
+                <span class="button-shine"></span>
+            </button>
+        </div>
+
+        <div class="gallery-section">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="polaroid-frame">
+                        <img src="/images/catwoman.jpg" alt="Cosplay Content">
+                        <div class="polaroid-caption">Cosplay</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="polaroid-frame videos-frame">
+                        <img src="/images/cat.jpg" alt="Video Content">
+                        <div class="polaroid-caption">Videos</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="polaroid-frame">
+                        <img src="/images/picture.jpg" alt="Photo Content">
+                        <div class="polaroid-caption">Photos</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="links">
-            <a href="https://onlyfans.com/ivytenebrae" class="link-button shop">
-                <i class="fas fa-shopping-bag"></i>
-                Subscribe OF
-                <span class="hover-effect"></span>
-            </a>
-
-            <a href="https://fansly.com/ivytenebrae" class="link-button shop">
-                <i class="fas fa-shopping-bag"></i>
-                Subscribe Fans.ly
-                <span class="hover-effect"></span>
-            </a>
-
-            <a href="https://patreon.com/ivytenebrae" class="link-button shop">
-                <i class="fas fa-shopping-bag"></i>
-                Subscribe Patreon
-                <span class="hover-effect"></span>
-            </a>
-
-            <a href="https://ivytenebrae.com/shop" class="link-button subscribe">
-                <i class="fas fa-star"></i>
-                Shop
-                <span class="hover-effect"></span>
-            </a>
-
-            <a href="https://paypal.me/ivytenebrae" class="link-button donate">
-                <i class="fas fa-hand-holding-dollar"></i>
-                Donate
-                <span class="hover-effect"></span>
-            </a>
-
-            <a href="https://www.amazon.co.uk/hz/wishlist/ls/1AY9324L42SAR?ref_=wl_share" class="link-button wishlist">
-                <i class="fas fa-gift"></i>
-                Wishlist
-                <span class="hover-effect"></span>
-            </a>
-
-            <a href="https://instagram.com/ivytenebraex" class="link-button social">
-                <i class="fab fa-instagram"></i>
-                Follow on Instagram
-                <span class="hover-effect"></span>
-            </a>
-
-            <a href="https://twitter.com/ivytenebrae" class="link-button social">
-                <i class="fa-brands fa-twitter"></i>
-                Follow on X
-                <span class="hover-effect"></span>
-            </a>
-
-            <a href="mailto:ivytenebrae1@gmail.com" class="link-button contact">
-                <i class="fas fa-envelope"></i>
-                Contact Me
-                <span class="hover-effect"></span>
-            </a>
+        <div class="bottom-section">
+            <h2 class="bottom-title">Premium Content!</h2>
+            <p class="bottom-subtitle">Join thousands of fans worldwide</p>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        // Add some interactive effects
+        document.querySelector('.main-cta-button').addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        document.querySelector('.main-cta-button').addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    </script>
 </body>
 </html> 
