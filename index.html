@@ -109,13 +109,18 @@
             container.appendChild(renderer.domElement);
             
             // Add lights
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
             scene.add(ambientLight);
             
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
             directionalLight.position.set(5, 5, 5);
             directionalLight.castShadow = true;
             scene.add(directionalLight);
+            
+            // Add a second softer light for better skin rendering
+            const fillLight = new THREE.DirectionalLight(0xffffff, 0.3);
+            fillLight.position.set(-3, 2, -3);
+            scene.add(fillLight);
             
             // Add controls
             controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -139,6 +144,16 @@
             mtlLoader.load('ivymodelmaterial.mtl', function(materials) {
                 materials.preload();
                 
+                // Simple texture filtering improvements only
+                Object.keys(materials.materials).forEach(function(key) {
+                    const material = materials.materials[key];
+                    if (material.map) {
+                        // Only improve filtering, don't change mapping
+                        material.map.minFilter = THREE.LinearFilter;
+                        material.map.magFilter = THREE.LinearFilter;
+                    }
+                });
+                
                 const objLoader = new THREE.OBJLoader();
                 objLoader.setMaterials(materials);
                 objLoader.setPath('./models/');
@@ -148,7 +163,7 @@
                     object.scale.setScalar(3);
                     object.position.set(0, 0, 0);
                     
-                    // Enable shadows
+                    // Enable shadows only - keep original smoothness
                     object.traverse(function(child) {
                         if (child.isMesh) {
                             child.castShadow = true;
