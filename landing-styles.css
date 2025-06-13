@@ -74,13 +74,19 @@ body {
     position: relative;
     margin: 0 auto;
     color: white;
-    font-size: 2rem;
+    font-size: 2.5rem;
     cursor: pointer;
     animation: bounce 2s infinite;
-    opacity: 0.8;
+    opacity: 0.9;
     transition: opacity 0.3s ease;
     display: flex;
     justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.scroll-indicator i {
+    display: block;
 }
 
 .scroll-indicator:hover {
