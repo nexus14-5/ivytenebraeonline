@@ -76,7 +76,6 @@ body {
     color: white;
     font-size: 2rem;
     cursor: pointer;
-    animation: bounce 2s infinite;
     opacity: 0.9;
     transition: opacity 0.3s ease;
     display: flex;
@@ -87,6 +86,8 @@ body {
 
 .scroll-indicator i {
     display: block;
+    color: white;
+    animation: bounce 2s infinite;
 }
 
 .scroll-indicator:hover {
