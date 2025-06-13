@@ -79,14 +79,18 @@ body {
     cursor: pointer;
     z-index: 10;
     padding: 1rem;
+    width: 40px;
+    height: 40px;
 }
 
-.scroll-indicator i {
-    display: block;
-    color: white !important;
-    font-size: 2rem !important;
+.custom-arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid white;
     animation: bounce 2s ease-in-out infinite;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 @keyframes bounce {
