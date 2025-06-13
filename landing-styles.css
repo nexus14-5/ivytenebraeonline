@@ -74,7 +74,7 @@ body {
     position: relative;
     margin: 0 auto;
     color: white;
-    font-size: 2.5rem;
+    font-size: 2rem;
     cursor: pointer;
     animation: bounce 2s infinite;
     opacity: 0.9;
