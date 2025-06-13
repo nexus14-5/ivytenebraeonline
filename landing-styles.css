@@ -86,8 +86,8 @@ body {
 
 .scroll-indicator i {
     display: block;
-    color: white;
-    animation: bounce 2s infinite;
+    color: white !important;
+    animation: bounce 2s infinite !important;
 }
 
 .scroll-indicator:hover {
